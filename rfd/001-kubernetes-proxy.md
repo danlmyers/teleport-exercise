@@ -19,27 +19,27 @@ This service is developed as a part of the Level 4 exercise for Teleport's Site 
 1. **Get Replica Count**
     - `GET /deployments/{name}/replicas`
     - **Example Output:**
-      ```json
+```json
       {
         "deploymentName": "nginx-deployment",
         "replicaCount": 3
       }
-      ```
+```
 
 2. **Set Replica Count**
     - `POST /deployments/{name}/replicas`
     - **Example Output:**
-      ```json
+```json
       {
         "deploymentName": "nginx-deployment",
         "updatedReplicaCount": 5
       }
-      ```
+```
 
 3. **List Deployments**
     - `GET /deployments`
     - **Example Output:**
-      ```json
+```json
       [
         {
           "deploymentName": "nginx-deployment",
@@ -50,17 +50,17 @@ This service is developed as a part of the Level 4 exercise for Teleport's Site 
           "replicaCount": 1
         }
       ]
-      ```
+```
 
 4. **Health Check**
     - `GET /health`
     - **Example Output:**
-      ```json
+```json
       {
         "status": "healthy",
         "kubernetes": "connected"
       }
-      ```
+```
 
 ### Security
 - **mTLS with Self-Signed Certificates:**
