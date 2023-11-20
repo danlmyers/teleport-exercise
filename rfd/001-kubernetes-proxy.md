@@ -11,7 +11,7 @@ The Kubernetes Deployment Management Service is an HTTP API designed for managin
 
 ## Why
 
-This service is proposed to streamline Kubernetes deployment management, improve scalability and availability of applications, and enhance security measures in client-server communication.
+This service is developed as a part of the Level 4 exercise for Teleport's Site Reliability Engineering (SRE) role. It aims to streamline Kubernetes deployment management, demonstrating capabilities in handling Kubernetes resources effectively.
 
 ## Details
 
@@ -81,9 +81,22 @@ This service is proposed to streamline Kubernetes deployment management, improve
 - **Helm Chart:** Develop a Helm chart for easy deployment into Kubernetes environments.
 
 ### Test Plan
-- **Unit Tests:** To cover individual components.
-- **Integration Tests:** To test the service with a Kubernetes cluster.
-- **End-to-End Tests:** To validate the entire workflow of the service.
+
+- **Unit Tests:**
+    - Test individual components such as `DeploymentCache` methods, ensuring thread-safe operations.
+    - Validate utility functions like Kubernetes client configuration.
+    - Mock Kubernetes client for testing handlers without actual Kubernetes interaction.
+
+- **Integration Tests:**
+    - Deploy the service in a controlled Kubernetes environment.
+    - Verify the service's interaction with Kubernetes API, particularly the ability to watch for deployment changes.
+    - Test API endpoints against the actual Kubernetes cluster to ensure correct behavior.
+
+- **End-to-End Tests:**
+    - Simulate real-world usage scenarios, including updating deployments.
+    - Verify that API endpoints return correct data and handle edge cases gracefully.
+
+
 
 ## Conclusion
 The proposed service aims to offer a robust and secure solution for managing Kubernetes deployments, with an emphasis on simplicity, efficiency, and scalability.
